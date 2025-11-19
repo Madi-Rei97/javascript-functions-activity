@@ -1,15 +1,14 @@
-function divides(num1, num2) {
-  return num1 % num2 === 0;
-}
+// function divides(num1, num2) {
+//   return num1 % num2 === 0;
+// }
 
 // Convert the above function to arrow function
 
-
+const divides = (num1, num2) => num1 % num2 === 0;
 
 // Write a function that converts Fahrenheit to Celsius
 
-
-
+const FahrenheitToCelsius = (f) => (f-32) * 1.8;
 
 // Convert the python function below to a javascript function
 
@@ -21,6 +20,18 @@ function divides(num1, num2) {
 //                 total += 1
 //     return total
 
+const pairsWithGivenSum = (numbers, target) => {
+  let total = 0;
+
+  for (let i = 0; i < numbers.length -1; i++) {
+    for (let j = i + 1; j < numbers.length; j++){
+      if (numbers[i] + numbers[j] === target) {
+        total += 1;
+      }
+    }
+  }
+  return total;
+};
 
 // Using the setInterval function (described below), register a callback function to be called every second.
 // Consider printing some output so that you can see that the callback is running.
@@ -33,3 +44,9 @@ function divides(num1, num2) {
 // Check out the MDN documentation for setInterval (and setTimeout) for additional details
 
 // add your call here
+
+const callBackFunction = function() {
+  console.log('This message shows up every second');
+};
+
+setInterval(callBackFunction, 1000);
